@@ -1,0 +1,9 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.printWidth": 124,
+  "workbench.colorTheme": "Dracula",
+  "emmet.includeLanguages": {
+    "javascript": "html"
+  }
+}
