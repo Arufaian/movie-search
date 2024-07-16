@@ -3,7 +3,7 @@ $(".search-button").click(function () {
   //   console.log(test);
 
   $.ajax({
-    url: "http://www.omdbapi.com/?apikey=7981eb16&s=" + inputKey,
+    url: "https://www.omdbapi.com/?apikey=7981eb16&s=" + inputKey,
 
     success: (result) => {
       const movies = result.Search;
@@ -17,7 +17,7 @@ $(".search-button").click(function () {
       $(".modal-detail-button").click(function () {
         //   console.log($(this).data("imdbid"));
         $.ajax({
-          url: `http://www.omdbapi.com/?apikey=7981eb16&i=` + $(this).data("imdbid"),
+          url: `https://www.omdbapi.com/?apikey=7981eb16&i=` + $(this).data("imdbid"),
           success: (m) => {
             let movieDetails = showMovieDetails(m);
             $(".modal-body").html(movieDetails);
