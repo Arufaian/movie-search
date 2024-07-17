@@ -1,11 +1,13 @@
 $(".search-button").click(function () {
   const inputKey = $(".input-key").val();
-  //   console.log(test);
+  let showKey = showSearchValue(inputKey);
 
   $.ajax({
     url: "https://www.omdbapi.com/?apikey=7981eb16&s=" + inputKey,
 
     success: (result) => {
+      $(".movie-search-key").html(showKey);
+
       const movies = result.Search;
       let cards = "";
       movies.forEach((movie) => {
@@ -32,7 +34,7 @@ $(".search-button").click(function () {
 });
 
 function showCards(movie) {
-  return `<div class="col-md-4 my-3">
+  return `<div class="col-md-4 col-sm-6 my-3">
   <div class="card">
       <img src="${movie.Poster}" class="card-img-top" />
       <div class="card-body">
@@ -62,4 +64,10 @@ function showMovieDetails(m) {
         </div>
     </div>
     </div>`;
+}
+
+function showSearchValue(inputKey) {
+  return `<div class="col">
+            <h2>your search "${inputKey}"</h2>
+          </div>`;
 }
